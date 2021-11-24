@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>
+			{% block title %}
+				{{title}}
+			{% endblock %}
+		</title>
+
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+	</head>
+
+	{#  **** BODY #}
+	<body>
+
+		{% include 'layouts/partials/_navbar.html.twig' %}
+
+		<div class="container my-5">
+
+			<div class="mt-3 mb-5 text-center">
+				<h1>
+					<b>Mon blog</b>
+				</h1>
+				<p class="mt-3">Welcome to the blog of
+					<span class="bg-dark text-white px-2 py-1">Spartam72</span>
+				</p>
+			</div>
+			{#  #}
+			{% block body %}{% endblock %}
+		</div>
+
+		{% include 'layouts/partials/_footer.html.twig' %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+
+	</body>
+	{#  **** FIN DU BODY #}
+</html></body></html>

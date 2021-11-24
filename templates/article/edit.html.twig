@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{# ne pas oublier de rajouter dans le fichier twig.yaml du dossier package #}
+{# form_themes: ['bootstrap_5_layout.html.twig'] #}
+
+
+	{% block body %}
+
+		<div
+		class="row"> {#  #}
+		<h4 class="first_letter w-100 mb-5 pb-2 border-bottom px-lg-0 px-3">Editer un article</h4>
+
+		<div class="col-lg-8 d-flex flex-wrap mb-lg-0 pe-lg-4 px-md-0 px-3 mb-5">
+
+			<div class="form_container w-100 mx-auto border-0">
+				{{ include('layouts/partials/_article_form.html.twig',{btnText : 'Editer'}) }}
+			</div>
+		</div>
+
+		{% include 'layouts/partials/_right_sidebar.html.twig' %}
+
+	</div>
+
+
+</div>{% endblock %}

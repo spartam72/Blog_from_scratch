@@ -1,0 +1,47 @@
+<form class="form-control p-lg-5 p-3 w-100 bg-light" method="post">
+
+	{% if error %}
+		<div class="alert alert-danger text-center mb-5">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	{% endif %}
+
+	<div class="d-flex mb-3">
+		<img class="mx-auto" src="{{ asset('build/img/login1.png') }}" width="150">
+	</div>
+
+	<div class="mb-3">
+		<label for="email">Email</label>
+		<input type="email" value="{{ last_username }}" name="email" id="email" class="form-control" placeholder="email" autocomplete="email" autofocus required>
+	</div>
+
+	<div class="mb-3">
+		<label for="password">Password</label>
+		<input type="password" name="password" id="password" class="form-control" placeholder="password" autocomplete="current-password" required>
+	</div>
+
+	<input
+	type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+	{# Remenber me checkbox #}
+	<div class="d-flex justify-content-between my-4">
+		<div class="form-check px-0">
+			<input type="checkbox" name="_remember_me" class="" id="remember_me">
+			<label class="form-check-label" for="remember_me">Se souvenir de moi</label>
+		</div>
+		<a href="#">Mot de passe oublié?</a>
+	</div>
+
+
+	<div class="d-flex mt-3 mb-lg-0 mb-4">
+		<button class="btn btn-lg btn-primary w-100" type="submit">
+			Sign in
+		</button>
+	</div>
+
+	<div class="w-100 mt-5">
+		<p class="text-center text-muted">Pas encore inscrit?<a href="#">
+				Créer un compte</a>
+		</p>
+	</div>
+
+
+</form>

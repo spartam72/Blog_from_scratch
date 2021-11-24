@@ -1,0 +1,70 @@
+.my_footer{
+
+    background-color: $navfoot !important;
+}
+
+.my_footer {
+    color: #fff;
+}
+
+.contact{
+
+    color: $main-color;
+}
+
+.title_icon{
+    color: $main-color !important;
+}
+
+.website {
+    text-decoration: none;
+    
+    &:hover {
+        text-decoration: underline !important;
+    }
+}
+
+.foot_links {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.sociaux {
+
+    font-size: 26px;
+
+    &:hover {
+        color: #fff !important;
+    }
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.twitter {
+    color: #00acee;
+}
+
+.google {
+    color: #db4a39;
+}
+
+.instagram {
+    color: #bc318f;
+}
+
+.linkedin {
+    color: #0e76a8;
+}
+
+.github {
+    color: #000;
+}
+
+.login_form {
+    height: max-content
+}

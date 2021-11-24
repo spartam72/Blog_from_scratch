@@ -1,0 +1,13 @@
+{# <form onsubmit="return confirm('Etes vous sûr de vouloir supprimer {{ article.title}}');" action="{{ path('app_article_delete',{id:article.id}) }}" method="post">
+	<input type="hidden" name="csrf_article_token" value="{{ csrf_token('article_deletion_' ~ article.id) }}">
+	<input type="hidden" name="_method" value="DELETE">
+	<button type="submit" class="btn btn-danger">supprimer</button>
+</form> #}
+
+
+<form onsubmit="return confirm('Etes vous sûr de vouloir supprimer {{ article.title}}');" action="{{ path('app_article_delete',{id:article.id}) }}" method="post">
+	<input
+	type="hidden" name="_token" value="{{ csrf_token('delete' ~ article.id) }}">
+	{# <input type="hidden" name="_method" value="DELETE"> #}
+	<button type="submit" class="btn btn-danger">supprimer</button>
+</form>

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{# ne pas oublier de rajouter dans le fichier twig.yaml du dossier package #}
+{# form_themes: ['bootstrap_5_layout.html.twig'] #}
+
+
+	{% block body %}
+
+	{{ include('layouts/partials/_flash_message.html.twig') }}
+
+		<div
+		class="row"> {#  #}
+		<h4 class="first_letter w-100 mb-5 pb-2 border-bottom px-lg-0 px-3">S'identifier</h4>
+
+		<div class="col-lg-8 d-flex flex-wrap mb-lg-0 pe-lg-4 px-md-0 px-3 mb-5 max_h">
+
+			{% include('layouts/partials/_login_form.html.twig') %}
+
+		</div>
+
+		{% include 'layouts/partials/_right_sidebar.html.twig' %}
+
+	</div>
+
+
+</div>{% endblock %}

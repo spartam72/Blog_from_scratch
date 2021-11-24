@@ -1,0 +1,96 @@
+@import "~bootstrap/scss/bootstrap";
+@import "shared/_color";
+@import "shared/_card_article";
+@import "shared/_navbar";
+@import "shared/_footer";
+@import "shared/_sidebar";
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+.first_letter::first-letter {
+    font-size: 25px !important;
+    color: $main-color !important;
+    font-weight: bold !important;
+}
+
+.max_h{
+
+    height: max-content;
+}
+
+//// ******************* INDICATEUR PAGE
+.paragPage {
+
+    color: #2d2c2b;
+}
+
+.indic {
+    background-color: $main-color;
+    color: #fff !important;
+}
+
+.numPage {
+    background-color: #008080;
+    color: #fff !important;
+}
+
+
+// ******************* FORM INPUT ET TEXTAREA
+
+.form_container{
+
+    height: max-content;
+}
+
+input{
+
+    height: max-content !important;
+}
+
+textarea {
+
+    min-height: 250px !important;
+}
+
+
+// ******************* SHOW PAGE
+
+.hover_img{
+
+    transition: .6s;
+}
+
+.hover_img:hover{
+
+transform: scale(1.075);
+
+}
+
+
+// ******************* MEDIA QUERIES
+
+@media (min-width: 992px) {
+    
+    .login_form{
+
+        width:  75% !important;
+    }
+
+}
+
+@media (max-width: 992px) {
+    
+    .login_form{
+
+        width:  100% !important;
+    }
+
+}

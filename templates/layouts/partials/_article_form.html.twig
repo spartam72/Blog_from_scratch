@@ -1,0 +1,28 @@
+<div class="form-control p-lg-5 p-3 bg-light max_h">
+
+	{{ form_start(form) }}
+
+	{{ form_row(form.imageFile) }}
+
+	{% if myRoute == 'app_article_edit' %}
+		<figure class="p-1 shadow-sm img-thumbnail mt-2 mb-4" style="width:35%">
+			<img
+			src="{{ article.image ? vich_uploader_asset(article,'imageFile') : asset('build/img/default_img.jpg') }}" class="w-100 img-fluid">
+			{#  #}
+			<figcaption class="bg-black text-white text-center p-1">
+				Image actuelle</figcaption>
+		</figure>
+	{% endif %}
+
+	{{ form_row(form.title,{'attr': {'placeholder':'Titre de l\'article'}}) }}
+	{{ form_row(form.content,{'attr': {'placeholder':'Contenu de l\'article'}}) }}
+
+	<div
+		class="w-100 d-flex mt-5">
+		{#  #}
+		<button class="btn btn-primary btn-lg w-100" type="submit" formnovalidate>{{ btnText|default('Créer') }}</button>
+	</div>
+
+	{{ form_end(form) }}
+
+</div>

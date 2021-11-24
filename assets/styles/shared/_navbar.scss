@@ -1,0 +1,66 @@
+.navbar{
+
+    background-color: $navfoot !important;
+}
+
+// .navbar .nav-a {
+//     color: #fff !important;
+//     font-weight: bold;
+// }
+
+// .nav-a {
+//     font-size: 17px;
+
+//     &:hover {
+//         color: $main-color !important;
+
+//     }
+// }
+
+
+
+// .navbar{
+
+//     background-color: $navfoot !important;
+// }
+
+.navbar .nav-link{
+
+    font-weight: bold;
+}
+
+.navbar .nav-link,.dropdown-item{
+
+    font-size: 18px;
+}
+
+.navbar-brand{
+
+    font-size: 35px;
+    color: $main-color !important;
+    font-family: MV Boli !important;
+}
+
+.actif {
+    color: $main-color !important;
+}
+
+.nav-a.actif {
+    color: $main-color !important;
+}
+
+
+.logout{
+
+    font-size: 17px;
+
+    &:hover{
+
+        color: $logout !important;
+    }
+}
+
+.text-green{
+
+    color: $login;
+}

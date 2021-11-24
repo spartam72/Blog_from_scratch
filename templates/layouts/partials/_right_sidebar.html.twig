@@ -1,0 +1,103 @@
+<div class="col-lg-4 px-md-0 px-3">
+
+	<div class="right-box w-100 sticky-lg-top" style="top:20px">
+
+		<div class="w-100 p-3">
+			<div class="header mb-4">
+				<h4 class="fw-bold">Rechercher</h4>
+			</div>
+			<div class="body search">
+				<div class="input-group m-b-0">
+					<input type="text" class="form-control" placeholder="Rechercher...">
+					<div class="input-group-prepend">
+						<button class="btn btn-sm btn-orange px-3 border-0 h-100 rounded-0" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w-100 p-3 my-3">
+			<div class="header mb-4">
+				<h4 class="fw-bold">Catégories</h4>
+			</div>
+			<div class="body widget">
+				<ul class="list-unstyled categories-clouds">
+					<li>
+						<a href="">eCommerce</a>
+					</li>
+					<li>
+						<a href="">Microsoft Technologies</a>
+					</li>
+					<li>
+						<a href="">Creative UX</a>
+					</li>
+					<li>
+						<a href="">Wordpress</a>
+					</li>
+					<li>
+						<a href="">Angular JS</a>
+					</li>
+					<li>
+						<a href="">Enterprise Mobility</a>
+					</li>
+					<li>
+						<a href="">Website Design</a>
+					</li>
+					<li>
+						<a href="">HTML5</a>
+					</li>
+					<li>
+						<a href="">Infographics</a>
+					</li>
+					<li>
+						<a href="">Wordpress Development</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="w-100 p-3">
+			<div class="header mb-4">
+				<h4 class="fw-bold">Articles récents</h4>
+			</div>
+			<div class="body ">
+				<div class="row">
+					<div
+						class="col-12 px-2 d-flex flex-wrap w-100">
+						{#  #}
+						{% for article in lastArticles %}
+							<div class="w-100 d-flex py-0 mb-3">
+								<div class="w-25 d-flex align-items-center">
+									<a href="#">
+										<a href="{{ path('app_article_show',{id:article.id}) }}">
+											<img src="{{ article.image ? vich_uploader_asset(article,'imageFile') : asset('build/img/default_img.jpg') }}" class="w-100 shadow-sm img-fluid">
+										</a>
+									</div>
+									<div class="w-75 d-flex align-items-center border-bottom post_side">
+										<a href="{{ path('app_article_show',{id:article.id}) }}" class="ps-3">{{article.title}}</a>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			{# #}
+			<div class="w-100 p-3 mt-3">
+				<div class="head">
+					<h4 class="fw-bold">Newsletter</h4>
+					<p class="text-body">Get our products/news earlier than others, let’s get in touch.</p>
+				</div>
+				<div class="body widget newsletter">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Enter Email">
+						<div class="input-group-append">
+							<button class="btn btn-sm btn-orange border-0  px-3 h-100 rounded-0" type="submit">
+								<i class="fas fa-paper-plane"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

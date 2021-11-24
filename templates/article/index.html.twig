@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{# --______________________________ ARTICLE CONTENT ________________________________ #}
+
+{% block body %}
+
+	{{ include('layouts/partials/_flash_message.html.twig') }}
+
+
+	<div class="row">
+
+		<div class="d-flex justify-content-between align-items-center mb-5 p-0 border-bottom">
+			{% if allArticles|length > 0 %}
+				<h4 class="first_letter px-0 ms-0">{{ pluralize(allArticles|length,'article','articles') }}</h4>
+				<p>Page
+					<span class="px-2 indic">{{ nPage }}</span>
+					/
+					{{ totalPages }}
+				</p>
+			{% else %}
+				<h4 class="first_letter text-end">Article</h4>
+			{% endif %}
+		</div>
+
+
+		<div class="col-lg-8 pe-lg-4 mb-lg-0 mb-5 px-md-0 px-3">
+
+			<div class="row justify-content-between">
+
+				{{ include('layouts/partials/_flash_message.html.twig') }}
+
+				{% if articles|length > 0 %}
+					{% for article in articles %}
+
+						<div class="col-lg-6 mb-5">
+							<figure class="effect-ming tm-item">
+								<img src="{{ article.image ? vich_uploader_asset(article,'imageFile') : asset('build/img/default_img.jpg') }}" alt="Image" class="w-100 img-fluid">
+								<figcaption class="d-flex align-items-center justify-content-center">
+									<h5>{{ article.title }}</h5>
+									<a href="{{ path('app_article_show',{id:article.id}) }}"></a>
+								</figcaption>
+							</figure>
+							<div class="d-flex justify-content-between text-dark font-monospace border-bottom">
+								<p>{{article.user.fullName}}</p>
+								<time datetime="{{article.createdAt|date('d-m-Y')}}">{{ article.createdAt|date('d-m-Y') }}</time>
+
+							</div>
+						</div>
+
+					{% endfor %}
+				{% else %}
+					<p class="h2 text-center">Pas encore d'article.&nbsp;<a class="fst-italic" href="{{path('app_article_new')}}">Créez en un !</a>
+					</p>
+				{% endif %}
+
+			</div>
+
+			<div class="mt-3 d-flex justify-content-center">
+				{{ knp_pagination_render(articles,'layouts/partials/_pagination.html.twig') }}
+			</div>
+
+		</div>
+
+		{% include 'layouts/partials/_right_sidebar.html.twig' %}
+
+	</div>
+
+{% endblock %}

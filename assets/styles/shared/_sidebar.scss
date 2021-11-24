@@ -1,0 +1,50 @@
+.right-box .categories-clouds li {
+    display: inline-block;
+    margin-bottom: 8px
+}
+
+.right-box .categories-clouds li a {
+    display: block;
+    border: 1px solid #6c757d;
+    padding: 6px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #6c757d;
+    background-color: #fff;
+}
+
+.right-box .categories-clouds li a:hover {
+
+    background-color: $main-color;
+    color: #fff;
+    border: 1px solid $main-color;
+}
+
+.post_side{
+
+    a{
+        text-decoration: none !important;
+        color: #0c0d0e !important;
+    }
+
+    a:hover{
+
+        color: #0c0d0e !important;
+    }
+
+    &:hover{
+
+        background-color: #cecece !important;
+    }
+}
+
+.btn-orange{
+
+    background-color: $main-color !important;
+    color: #fff !important;
+
+    &:hover{
+
+        background-color: $btn_hover !important;
+    }
+}
